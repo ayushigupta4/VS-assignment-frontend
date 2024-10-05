@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React-based frontend and Python/FastAPI backend integration that allows users to create and manage node-based pipelines. The assignment focuses on the following tasks:
 
-## Available Scripts
+1. Node Abstraction: Implement an abstraction for creating different types of nodes (inputs, outputs, LLMs, text) with shared code for easier maintenance.
 
-In the project directory, you can run:
+2. Styling: Apply a unified, appealing design across all components.
 
-### `npm start`
+3. Text Node Logic: Add dynamic text input resizing and support for user-defined variables in the Text node.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+4. Backend Integration: Integrate the frontend with a Python/FastAPI backend, allowing the submission of pipelines and returning details on the number of nodes, edges, and whether the pipeline forms a Directed Acyclic Graph (DAG).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+1. Node Abstraction
+- Implemented a common structure for nodes, reducing redundancy.
+- Created five new nodes to demonstrate the flexibility of the abstraction.
+- Abstracted components to allow easy future modifications and styling changes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Styling
+- Applied custom styles to improve the design and visual consistency of the application.
+- Used modern CSS techniques and/or external libraries for a responsive and clean user interface.
 
-### `npm run build`
+3. Text Node Logic
+- Text node dynamically resizes based on the input, improving user visibility.
+- Users can define variables in the text field using double curly brackets {{variable}}. This creates a new handle (connection point) for the variable.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Backend Integration
+- The frontend can now submit the nodes and edges of the pipeline to the backend for analysis.
+- Backend checks the pipeline for:
+    # Total number of nodes
+    # Total number of edges
+    # Whether the pipeline forms a Directed Acyclic Graph (DAG)
+- Displays the result via a user-friendly alert on the frontend.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Setup and Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Navigate to the /frontend directory: cd frontend
+2. Install dependencies: npm install
+3. Run the development server: npm start
 
-### `npm run eject`
+#### Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Create a pipeline by dragging and connecting nodes on the frontend.
+2. Use the Text node to define variables by entering text like {{variable_name}} in the input field.
+3. Once the pipeline is complete, click the "Submit" button to send the data to the backend.
+4. A notification will pop up with the number of nodes, number of edges, and whether the pipeline forms a DAG.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##### Project Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+/frontend/src
+  ├── components/        # Reusable React components
+  ├── nodes/             # Node abstraction and specific node definitions
+  ├── styles/            # Custom styles
+  ├── submit.js          # Logic for sending pipeline data to backend
