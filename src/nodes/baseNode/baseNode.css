@@ -1,0 +1,87 @@
+.node {
+    box-sizing: border-box;
+    position: relative;
+    width: 200;
+    height: 80; 
+    border: 1px solid #857daf;
+    box-shadow: 0 0 0 0px #a79ddd;
+    padding: 8px;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+}
+
+.node:focus {
+    box-shadow: 0 0 0 2px #a79ddd;
+}
+
+.node:hover {
+    box-shadow: 0 0 0 2px #a79ddd;
+}
+
+.node #title {
+    color: #857daf;
+}
+
+.node #child label {
+    font-size:x-small ;
+    color: #857daf;
+    display: block;
+}
+
+.node #child textarea {
+    width: 100%;
+    resize: none;
+    min-height: 3em;
+    max-height: 10em;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.node #child input,
+.node #child select,
+.node #child textarea {
+    display: block;
+    border: 1px solid #857daf;
+    box-shadow: 0 0 0 0px #a79ddd;
+    margin: 1px;
+    font-size: x-small;
+    transition: box-shadow 0.3s ease;
+    color: #857daf;
+    border-radius: 2px;
+}
+
+.node #child input:focus,
+.node #child select:focus,
+.node #child textarea:focus {
+    box-shadow: 0 0 0 1px #a79ddd;
+    outline: none;
+}
+
+.custom-handle.react-flow__handle {
+    height: 7px;
+    width: 7px;
+    background-color: white;
+    border: 1px solid #857daf;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0px #a79ddd;
+    transition: box-shadow 0.3s ease;
+}
+
+.custom-handle.react-flow__handle:hover {
+    box-shadow: 0 0 0 2px #a79ddd;
+    
+}
+
+.node #child textarea::-webkit-scrollbar {
+    width: 5px;
+}
+
+.node #child textarea::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.node #child textarea::-webkit-scrollbar-thumb {
+    background-color: #857daf;
+    border-radius: 5px;
+    cursor: pointer;
+}
